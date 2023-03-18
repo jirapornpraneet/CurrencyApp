@@ -14,7 +14,7 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet var currenciesLabel: [UILabel]!
-    @IBOutlet var  ratesLabel: [UILabel]!
+    @IBOutlet var ratesLabel: [UILabel]!
     
     var viewModel = CurrencyViewModel()
 
