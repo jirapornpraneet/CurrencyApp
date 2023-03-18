@@ -55,7 +55,7 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rp-hr-MSn">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="65"/>
                                                                                 <subviews>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-EE-g8n">
+                                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-EE-g8n">
                                                                                         <rect key="frame" x="5" y="5" width="172.66666666666666" height="55"/>
                                                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.28235294119999998" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,19 +126,19 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-ze-8rQ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="65"/>
                                                                                 <subviews>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTo-A7-C2A">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-Hq-LZA">
                                                                                         <rect key="frame" x="5" y="5" width="172.66666666666666" height="55"/>
-                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits"/>
-                                                                                    </textField>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="bottom" secondItem="eTo-A7-C2A" secondAttribute="bottom" constant="5" id="EUa-8Z-FIx"/>
-                                                                                    <constraint firstItem="eTo-A7-C2A" firstAttribute="leading" secondItem="Byz-ze-8rQ" secondAttribute="leading" constant="5" id="Tdb-H8-3UD"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="eTo-A7-C2A" secondAttribute="trailing" constant="5" id="iE6-Uc-a8h"/>
-                                                                                    <constraint firstItem="eTo-A7-C2A" firstAttribute="top" secondItem="Byz-ze-8rQ" secondAttribute="top" constant="5" id="kcI-jM-PpT"/>
+                                                                                    <constraint firstItem="sb4-Hq-LZA" firstAttribute="leading" secondItem="Byz-ze-8rQ" secondAttribute="leading" constant="5" id="2NY-wS-Z2N"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="sb4-Hq-LZA" secondAttribute="trailing" constant="5" id="Oja-B0-UAg"/>
+                                                                                    <constraint firstItem="sb4-Hq-LZA" firstAttribute="top" secondItem="Byz-ze-8rQ" secondAttribute="top" constant="5" id="XIZ-w0-ArS"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="sb4-Hq-LZA" secondAttribute="bottom" constant="5" id="gil-e5-ixq"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cu-9g-GW5">
@@ -415,6 +415,7 @@
                     </view>
                     <connections>
                         <outlet property="currencyLabel" destination="PPt-Q9-lFt" id="Ti7-aS-UcV"/>
+                        <outlet property="currencyTextField" destination="lhf-EE-g8n" id="dPJ-OF-IRr"/>
                         <outlet property="dateTimeLabel" destination="z46-Rt-Ggw" id="Li2-Mo-H6A"/>
                         <outlet property="tableView" destination="byz-13-lAf" id="gVM-8B-Ihi"/>
                         <outletCollection property="currenciesLabel" destination="oU0-0d-nUR" collectionClass="NSMutableArray" id="RHn-pU-pt7"/>

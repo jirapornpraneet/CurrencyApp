@@ -6,3 +6,23 @@
 //
 
 import Foundation
+import UIKit
+
+extension CurrencyViewController {
+    
+    func setupView() {
+        setupTableView()
+        setupTextField()
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyTableViewCell")
+    }
+    
+    func setupTextField() {
+        currencyTextField.delegate = self
+        
+    }
+}
