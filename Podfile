@@ -9,5 +9,6 @@ target 'CurrencyApp' do
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'ObjectMapper', '~> 3.5.1'
   pod 'AAPickerView', '~> 1.0'
+  pod 'RealmSwift', '~>10'
 
 end
