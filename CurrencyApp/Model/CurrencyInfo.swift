@@ -11,9 +11,9 @@ import ObjectMapper
 
 class CurrencyInfo: Mappable {
     
-    var USD: CurrencyInfo?
-    var GBP: CurrencyInfo?
-    var EUR: CurrencyInfo?
+    var USD: CurrencyDetailInfo?
+    var GBP: CurrencyDetailInfo?
+    var EUR: CurrencyDetailInfo?
     
     required init?(map: Map) {}
     

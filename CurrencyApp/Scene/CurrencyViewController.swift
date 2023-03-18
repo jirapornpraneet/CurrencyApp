@@ -31,7 +31,7 @@ class CurrencyViewController: UIViewController {
     func fetchData() {
         viewModel.requestData { isSucces in
             if isSucces {
-                setupInterface()
+                self.setupInterface()
             } else {
                 //alert Error
             }
