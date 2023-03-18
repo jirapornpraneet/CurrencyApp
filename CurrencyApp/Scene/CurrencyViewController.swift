@@ -42,11 +42,6 @@ class CurrencyViewController: UIViewController {
     
     func setupInterface() {
         dateTimeLabel.text = self.chartCurrencyInfo?.time?.updated
-        
-        currenciesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.code
-        currenciesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.code
-        currenciesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.code
-        
         ratesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.rate
         ratesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.rate
         ratesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.rate
@@ -58,7 +53,14 @@ class CurrencyViewController: UIViewController {
             currencies.append(currency.EUR!)
         }
         
-        configPicker()
+        if isFirstTime {
+            configPicker()
+            currenciesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.code
+            currenciesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.code
+            currenciesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.code
+        }
+        
+        self.isFirstTime = false
     }
     
     func configPicker() {
@@ -96,7 +98,6 @@ class CurrencyViewController: UIViewController {
     
     @objc func fetchData() {
         viewModel.requestData { isSucces in
-            self.isFirstTime = false
             if isSucces {
                 if self.isFirstStartTimer {
                     self.startTimer()
