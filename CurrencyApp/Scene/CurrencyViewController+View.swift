@@ -23,6 +23,7 @@ extension CurrencyViewController {
     
     func setupTextField() {
         currencyTextField.delegate = self
+        currencyTextField.addTarget(self, action: #selector(CurrencyViewController.textFieldDidChange(_:)), for: .editingChanged)
         
     }
 }

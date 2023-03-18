@@ -22,6 +22,7 @@ class CurrencyViewController: UIViewController {
     var viewModel = CurrencyViewModel()
     var chartCurrencyInfo: ChartCurrencyInfo?
     var currencies = [CurrencyDetailInfo]()
+    var selectedCurrency = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class CurrencyViewController: UIViewController {
         picker.valueDidSelected = { (index) in
             self.currencyLabel.text = currencyNames[index as! Int]
             self.picker.text = ""
+            self.selectedCurrency = index as! Int
             print("selectedString ", currencyNames[index as! Int])
             
         }
@@ -93,7 +95,11 @@ class CurrencyViewController: UIViewController {
 }
 
 extension CurrencyViewController: UITextFieldDelegate {
-    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let btc = Double(currencyTextField.text ?? "") ?? 0.0
+        let sum = self.currencies[selectedCurrency].rate_float * btc
+        btcLabel.text = sum.toString()
+    }
 }
 
 extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
