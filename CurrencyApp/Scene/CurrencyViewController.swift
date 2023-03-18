@@ -8,6 +8,12 @@
 import UIKit
 
 class CurrencyViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet var currenciesLabel: [UILabel]!
+    @IBOutlet var  ratesLabel: [UILabel]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
