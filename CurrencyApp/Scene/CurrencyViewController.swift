@@ -17,6 +17,7 @@ class CurrencyViewController: UIViewController {
     @IBOutlet var ratesLabel: [UILabel]!
     
     var viewModel = CurrencyViewModel()
+    var chartCurrencyInfo: ChartCurrencyInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,19 @@ class CurrencyViewController: UIViewController {
     }
     
     func setupInterface() {
+        currenciesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.code
+        currenciesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.code
+        currenciesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.code
         
+        ratesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.rate
+        ratesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.rate
+        ratesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.rate
     }
     
     func fetchData() {
         viewModel.requestData { isSucces in
             if isSucces {
+                self.chartCurrencyInfo = self.viewModel.info
                 self.setupInterface()
             } else {
                 //alert Error
