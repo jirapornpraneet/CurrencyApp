@@ -60,6 +60,8 @@ class CurrencyViewController: UIViewController {
             currencies.append(currency.USD!)
             currencies.append(currency.GBP!)
             currencies.append(currency.EUR!)
+            
+            //Realm
             let USDInfo = CurrencyObject(code: currency.USD?.code ?? "", rate: currency.USD?.rate ?? "", dateTime: currency.USD?.dateTime ?? "")
             let GBPInfo = CurrencyObject(code: currency.GBP?.code ?? "", rate: currency.GBP?.rate ?? "", dateTime: currency.GBP?.dateTime ?? "")
             let EURInfo = CurrencyObject(code: currency.EUR?.code ?? "", rate: currency.EUR?.rate ?? "", dateTime: currency.EUR?.dateTime ?? "")
@@ -110,10 +112,6 @@ class CurrencyViewController: UIViewController {
             print("selectedString ", currencyNames[index as! Int])
             self.calculatorExchange()
             
-        }
-        
-        picker.valueDidChange = { value in
-//            self.calculatorExchange()
         }
     }
     
