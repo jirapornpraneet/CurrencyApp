@@ -59,7 +59,7 @@
                                                                                         <rect key="frame" x="5" y="5" width="172.66666666666666" height="55"/>
                                                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.28235294119999998" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
