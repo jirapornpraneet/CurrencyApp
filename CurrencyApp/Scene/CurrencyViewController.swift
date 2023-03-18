@@ -75,6 +75,8 @@ class CurrencyViewController: UIViewController {
             currenciesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.code
             currenciesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.code
             currenciesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.code
+            currencyTextField.text = "1"
+            calculatorExchange()
         }
         
         self.isFirstTime = false
