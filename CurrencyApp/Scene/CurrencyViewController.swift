@@ -7,6 +7,8 @@
 
 import UIKit
 import AAPickerView
+import Realm
+import RealmSwift
 
 class CurrencyViewController: UIViewController {
     
@@ -31,6 +33,7 @@ class CurrencyViewController: UIViewController {
     
     var isFirstTime = true
     var isFirstStartTimer = true
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +59,14 @@ class CurrencyViewController: UIViewController {
             currencies.append(currency.USD!)
             currencies.append(currency.GBP!)
             currencies.append(currency.EUR!)
+            let USDInfo = CurrencyObject(code: currency.USD?.code ?? "", rate: currency.USD?.rate ?? "", dateTime: currency.USD?.dateTime ?? "")
+            let GBPInfo = CurrencyObject(code: currency.GBP?.code ?? "", rate: currency.GBP?.rate ?? "", dateTime: currency.GBP?.dateTime ?? "")
+            let EURInfo = CurrencyObject(code: currency.EUR?.code ?? "", rate: currency.EUR?.rate ?? "", dateTime: currency.EUR?.dateTime ?? "")
+            try! realm.write {
+                realm.add(USDInfo)
+                realm.add(GBPInfo)
+                realm.add(EURInfo)
+            }
         }
         
         if isFirstTime {
@@ -133,7 +144,7 @@ extension CurrencyViewController: UITextFieldDelegate {
 
 extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies.count
+        return realm.objects(CurrencyObject.self).count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,7 +153,7 @@ extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell", for: indexPath) as! CurrencyTableViewCell
-        cell.info = currencies[indexPath.row]
+        cell.info = realm.objects(CurrencyObject.self)[indexPath.row]
         return cell
     }
 }

@@ -17,7 +17,7 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var ratesLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     
-    var info: CurrencyDetailInfo? {
+    var info: CurrencyObject? {
         didSet {
             updateInterface()
         }
