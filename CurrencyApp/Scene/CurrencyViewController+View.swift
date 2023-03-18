@@ -24,6 +24,17 @@ extension CurrencyViewController {
     func setupTextField() {
         currencyTextField.delegate = self
         currencyTextField.addTarget(self, action: #selector(CurrencyViewController.textFieldDidChange(_:)), for: .editingChanged)
-        
+    }
+    
+    func startTimer() {
+        stopTimer()
+        guard self.timer == nil else { return }
+        self.timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector:#selector(self.fetchData) , userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        guard timer != nil else { return }
+        timer?.invalidate()
+        timer = nil
     }
 }

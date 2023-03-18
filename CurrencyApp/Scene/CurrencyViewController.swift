@@ -23,11 +23,21 @@ class CurrencyViewController: UIViewController {
     var chartCurrencyInfo: ChartCurrencyInfo?
     var currencies = [CurrencyDetailInfo]()
     var selectedCurrency = 0
+    var timer : Timer? = nil {
+        willSet {
+            timer?.invalidate()
+        }
+    }
+    
+    var isFirstTime = true
+    var isFirstStartTimer = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        fetchData()
+        if isFirstTime {
+            fetchData()
+        }
     }
     
     func setupInterface() {
@@ -84,9 +94,14 @@ class CurrencyViewController: UIViewController {
         }
     }
     
-    func fetchData() {
+    @objc func fetchData() {
         viewModel.requestData { isSucces in
+            self.isFirstTime = false
             if isSucces {
+                if self.isFirstStartTimer {
+                    self.startTimer()
+                    self.isFirstStartTimer = false
+                }
                 self.chartCurrencyInfo = self.viewModel.info
                 self.setupInterface()
             } else {
