@@ -20,6 +20,7 @@ class CurrencyViewController: UIViewController {
     @IBOutlet var currenciesLabel: [UILabel]!
     @IBOutlet var ratesLabel: [UILabel]!
     @IBOutlet weak var picker: AAPickerView!
+    @IBOutlet var views: [UIView]!
     
     var viewModel = CurrencyViewModel()
     var chartCurrencyInfo: ChartCurrencyInfo?

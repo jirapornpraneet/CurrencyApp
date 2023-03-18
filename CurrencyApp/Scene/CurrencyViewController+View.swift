@@ -13,6 +13,10 @@ extension CurrencyViewController {
     func setupView() {
         setupTableView()
         setupTextField()
+        views.forEach { view in
+            view.setupBorder()
+            view.setupCorner()
+        }
     }
     
     func setupTableView() {

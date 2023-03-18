@@ -25,6 +25,7 @@
 		399E809F29C5AA2D00A8B41D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E809E29C5AA2D00A8B41D /* String+Extension.swift */; };
 		399E80A129C5AA4600A8B41D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E80A029C5AA4600A8B41D /* Date+Extension.swift */; };
 		399E80A429C5AF5C00A8B41D /* CurrencyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E80A329C5AF5C00A8B41D /* CurrencyObject.swift */; };
+		399E80A629C5B4AD00A8B41D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E80A529C5B4AD00A8B41D /* UIView+Extension.swift */; };
 		3E6326228D90095E0176B6D3 /* Pods_CurrencyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCC0A5BCC1BDBD8722B3AC6 /* Pods_CurrencyApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		399E809E29C5AA2D00A8B41D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		399E80A029C5AA4600A8B41D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		399E80A329C5AF5C00A8B41D /* CurrencyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyObject.swift; sourceTree = "<group>"; };
+		399E80A529C5B4AD00A8B41D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4DCC0A5BCC1BDBD8722B3AC6 /* Pods_CurrencyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D574B2379DAFE866C095942 /* Pods-CurrencyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyApp.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 				399E809C29C5A37900A8B41D /* Double+Extension.swift */,
 				399E809E29C5AA2D00A8B41D /* String+Extension.swift */,
 				399E80A029C5AA4600A8B41D /* Date+Extension.swift */,
+				399E80A529C5B4AD00A8B41D /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				399E808729C58EDD00A8B41D /* CurrencyViewController+View.swift in Sources */,
 				399E808929C58EEA00A8B41D /* CurrencyViewModel.swift in Sources */,
 				399E80A129C5AA4600A8B41D /* Date+Extension.swift in Sources */,
+				399E80A629C5B4AD00A8B41D /* UIView+Extension.swift in Sources */,
 				399E806A29C588D800A8B41D /* AppDelegate.swift in Sources */,
 				399E809829C5962B00A8B41D /* CurrencyDetailInfo.swift in Sources */,
 				399E809F29C5AA2D00A8B41D /* String+Extension.swift in Sources */,

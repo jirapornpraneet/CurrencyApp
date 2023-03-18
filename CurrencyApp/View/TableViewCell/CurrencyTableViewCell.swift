@@ -10,7 +10,7 @@ import UIKit
 class CurrencyTableViewCell: UITableViewCell {
     
     static var height: CGFloat {
-        return 35.0
+        return 45.0
     }
     
     @IBOutlet weak var currencyLabel: UILabel!
