@@ -85,24 +85,23 @@
                                                                                             <constraint firstAttribute="width" constant="35" id="Lab-yD-w3J"/>
                                                                                         </constraints>
                                                                                     </imageView>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpa-gf-LfD">
-                                                                                        <rect key="frame" x="0.0" y="5" width="182.33333333333334" height="55"/>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M35-qd-nNc" customClass="AAPickerView" customModule="AAPickerView">
+                                                                                        <rect key="frame" x="5" y="5" width="172.33333333333334" height="55"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                    </button>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="Y5P-vR-kmD" secondAttribute="trailing" constant="5" id="0KU-Wq-0tf"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="wpa-gf-LfD" secondAttribute="trailing" id="6Ij-Rw-BZh"/>
                                                                                     <constraint firstItem="PPt-Q9-lFt" firstAttribute="top" secondItem="EzL-iS-vzW" secondAttribute="top" constant="5" id="H64-wr-X7n"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="wpa-gf-LfD" secondAttribute="bottom" constant="5" id="Jd3-yJ-Q5y"/>
+                                                                                    <constraint firstItem="M35-qd-nNc" firstAttribute="leading" secondItem="EzL-iS-vzW" secondAttribute="leading" constant="5" id="H8n-F9-cbx"/>
                                                                                     <constraint firstItem="PPt-Q9-lFt" firstAttribute="leading" secondItem="EzL-iS-vzW" secondAttribute="leading" constant="5" id="Ko7-ve-fJm"/>
-                                                                                    <constraint firstItem="wpa-gf-LfD" firstAttribute="top" secondItem="EzL-iS-vzW" secondAttribute="top" constant="5" id="OAY-St-W8q"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="PPt-Q9-lFt" secondAttribute="bottom" constant="5" id="TFL-da-hUJ"/>
                                                                                     <constraint firstItem="Y5P-vR-kmD" firstAttribute="leading" secondItem="PPt-Q9-lFt" secondAttribute="trailing" id="bMc-8L-nCD"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="M35-qd-nNc" secondAttribute="trailing" constant="5" id="fL4-9A-GCN"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="M35-qd-nNc" secondAttribute="bottom" constant="5" id="ih8-Cz-frT"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="Y5P-vR-kmD" secondAttribute="bottom" constant="5" id="jqh-Q0-nbQ"/>
-                                                                                    <constraint firstItem="wpa-gf-LfD" firstAttribute="leading" secondItem="EzL-iS-vzW" secondAttribute="leading" id="opi-gf-DHI"/>
+                                                                                    <constraint firstItem="M35-qd-nNc" firstAttribute="top" secondItem="EzL-iS-vzW" secondAttribute="top" constant="5" id="m8C-9i-D3I"/>
                                                                                     <constraint firstItem="Y5P-vR-kmD" firstAttribute="top" secondItem="EzL-iS-vzW" secondAttribute="top" constant="5" id="vfS-8R-1fX"/>
                                                                                 </constraints>
                                                                             </view>
@@ -414,9 +413,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btcLabel" destination="sb4-Hq-LZA" id="IY6-rO-jqO"/>
                         <outlet property="currencyLabel" destination="PPt-Q9-lFt" id="Ti7-aS-UcV"/>
                         <outlet property="currencyTextField" destination="lhf-EE-g8n" id="dPJ-OF-IRr"/>
                         <outlet property="dateTimeLabel" destination="z46-Rt-Ggw" id="Li2-Mo-H6A"/>
+                        <outlet property="picker" destination="M35-qd-nNc" id="cZz-b7-t9R"/>
                         <outlet property="tableView" destination="byz-13-lAf" id="gVM-8B-Ihi"/>
                         <outletCollection property="currenciesLabel" destination="oU0-0d-nUR" collectionClass="NSMutableArray" id="RHn-pU-pt7"/>
                         <outletCollection property="currenciesLabel" destination="itZ-mD-iI7" collectionClass="NSMutableArray" id="2Jx-4d-03y"/>
