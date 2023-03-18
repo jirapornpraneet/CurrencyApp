@@ -94,11 +94,12 @@ class CurrencyViewController: UIViewController {
             self.picker.text = ""
             self.selectedCurrency = index as! Int
             print("selectedString ", currencyNames[index as! Int])
+            self.calculatorExchange()
             
         }
         
         picker.valueDidChange = { value in
-            print(value)
+//            self.calculatorExchange()
         }
     }
     
@@ -116,13 +117,17 @@ class CurrencyViewController: UIViewController {
             }
         }
     }
+    
+    func calculatorExchange() {
+        let btc = Double(currencyTextField.text ?? "") ?? 0.0
+        let sum = self.currencies[selectedCurrency].rate_float * btc
+        btcLabel.text = sum.toString()
+    }
 }
 
 extension CurrencyViewController: UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let btc = Double(currencyTextField.text ?? "") ?? 0.0
-        let sum = self.currencies[selectedCurrency].rate_float * btc
-        btcLabel.text = sum.toString()
+        calculatorExchange()
     }
 }
 
