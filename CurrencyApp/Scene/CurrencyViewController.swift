@@ -41,10 +41,15 @@ class CurrencyViewController: UIViewController {
     }
     
     func setupInterface() {
-        dateTimeLabel.text = self.chartCurrencyInfo?.time?.updated
+        dateTimeLabel.text = self.chartCurrencyInfo?.time?.updatedISO.toDate()?.toString(format: "EEEE, MMM d, yyyy")
         ratesLabel[0].text = self.chartCurrencyInfo?.bpi?.USD?.rate
         ratesLabel[1].text = self.chartCurrencyInfo?.bpi?.GBP?.rate
         ratesLabel[2].text = self.chartCurrencyInfo?.bpi?.EUR?.rate
+        
+        let dateTimeUpdate = self.chartCurrencyInfo?.time?.updatedISO.toDate()?.toString()
+        self.chartCurrencyInfo?.bpi?.USD?.dateTime = dateTimeUpdate ?? ""
+        self.chartCurrencyInfo?.bpi?.GBP?.dateTime = dateTimeUpdate ?? ""
+        self.chartCurrencyInfo?.bpi?.EUR?.dateTime = dateTimeUpdate ?? ""
         
         //add Data
         if let currency = self.chartCurrencyInfo?.bpi {

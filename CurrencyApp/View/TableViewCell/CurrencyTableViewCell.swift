@@ -10,7 +10,7 @@ import UIKit
 class CurrencyTableViewCell: UITableViewCell {
     
     static var height: CGFloat {
-        return UITableView.automaticDimension
+        return 35.0
     }
     
     @IBOutlet weak var currencyLabel: UILabel!
@@ -28,7 +28,7 @@ class CurrencyTableViewCell: UITableViewCell {
         if let item = info {
             currencyLabel.text = item.code
             ratesLabel.text = item.rate
-//            dateTimeLabel.text = item.dateTime?.toString()
+            dateTimeLabel.text = item.dateTime
         }
     }
 

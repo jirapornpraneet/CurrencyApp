@@ -16,6 +16,7 @@ class CurrencyDetailInfo: Mappable {
     var rate = ""
     var description = ""
     var rate_float = 0.0
+    var dateTime = ""
     
     required init?(map: Map) {}
     
