@@ -15,9 +15,27 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet var currenciesLabel: [UILabel]!
     @IBOutlet var  ratesLabel: [UILabel]!
+    
+    var viewModel = CurrencyViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        fetchData()
+    }
+    
+    func setupInterface() {
+        
+    }
+    
+    func fetchData() {
+        viewModel.requestData { isSucces in
+            if isSucces {
+                setupInterface()
+            } else {
+                //alert Error
+            }
+        }
     }
 }
 
