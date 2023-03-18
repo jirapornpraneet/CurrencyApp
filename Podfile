@@ -8,6 +8,6 @@ target 'CurrencyApp' do
   pod 'AlamofireObjectMapper', :git => 'https://github.com/tristanhimmelman/AlamofireObjectMapper.git', :tag => '6.3.0'
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'ObjectMapper', '~> 3.5.1'
-
+  pod 'AAPickerView', '~> 1.0'
 
 end
