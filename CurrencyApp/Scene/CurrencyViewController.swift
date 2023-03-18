@@ -61,6 +61,7 @@ class CurrencyViewController: UIViewController {
         }
         
         self.isFirstTime = false
+        self.tableView.reloadData()
     }
     
     func configPicker() {
@@ -122,7 +123,7 @@ extension CurrencyViewController: UITextFieldDelegate {
 
 extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return currencies.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -130,6 +131,8 @@ extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell", for: indexPath) as! CurrencyTableViewCell
+        cell.info = currencies[indexPath.row]
+        return cell
     }
 }

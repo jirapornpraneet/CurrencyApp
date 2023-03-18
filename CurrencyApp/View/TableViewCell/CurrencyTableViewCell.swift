@@ -16,6 +16,21 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var ratesLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    
+    var info: CurrencyDetailInfo? {
+        didSet {
+            updateInterface()
+        }
+    }
+    
+    
+    func updateInterface() {
+        if let item = info {
+            currencyLabel.text = item.code
+            ratesLabel.text = item.rate
+//            dateTimeLabel.text = item.dateTime?.toString()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
